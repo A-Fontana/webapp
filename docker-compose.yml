@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web_app:
+    image: nginx
+    container_name: web_app
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - my_webapp_net
+networks:
+  my_webapp_net:
